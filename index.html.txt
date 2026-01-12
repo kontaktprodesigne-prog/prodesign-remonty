@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pl" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PRO DESIGN – Wykończenia wnętrz i remonty | Rzeszów</title>
+  <meta name="description" content="PRO DESIGN – kompleksowe wykończenia wnętrz i remonty mieszkań oraz domów w Rzeszowie. Solidne wykonanie, terminowość i rzetelna wycena.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+}
+
+html, body, .app-wrapper {
+  height: 100%;
+}
+
+.app-wrapper {
+  overflow: auto;
+}
+
+/* LANG */
+.lang-en { display: none; }
+body.lang-english .lang-en { display: inline; }
+body.lang-english .lang-pl { display: none; }
+
+/* HEADER */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-box {
+  display: flex;
+  border: 3px solid #2c3e50;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-left {
+  background: #2c3e50;
+  color: white;
+  padding: 8px 20px;
+}
+
+.logo-right {
+  background: white;
+  color: #2c3e50;
+  padding: 8px 20px;
+  font-weight: 700;
+}
+
+.logo-tagline {
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-top: 6px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #2c3e50;
+  cursor: pointer;
+  position: relative;
+}
+
+nav a.active {
+  color: gold;
+  font-weight: 600;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: gold;
+  transform: translateX(-50%);
+  transition: width .3s;
+}
+
+nav a.active::after,
+nav a:hover::after {
+  width: 70%;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+  url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1600&q=80') center/cover no-repeat;
+  padding: 120px 20px;
+  color: white;
+  text-align: center;
+}
+
+.hero.small {
+  padding: 140px 20px;
+}
+
+.cta-big {
+  background: black;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.grey {
+  background: #f6f6f6;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* FORM */
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  padding: 14px;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* PAGES */
+.page-content { display: none; }
+.page-content.active { display: block; }
+
+/* ANIM */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+</style>
+</head>
+<body class="h-full">
+<div class="app-wrapper w-full">
+
+<header class="top">
+  <div class="logo-container" id="logoContainer">
+    <div class="logo-box">
+      <div class="logo-left">PRO</div>
+      <div class="logo-right">DESIGN</div>
+    </div>
+    <div class="logo-tagline">
+      <span class="lang-pl">Remonty i Wykończenia</span>
+      <span class="lang-en">Renovations and Finishing</span>
+    </div>
+  </div>
+
+  <nav>
+    <a class="nav-tab active" data-page="home">Start</a>
+    <a class="nav-tab" data-page="lazienki">Łazienki</a>
+    <a class="nav-tab" data-page="kafelkowanie">Kafelkowanie</a>
+    <a class="nav-tab" data-page="malowanie">Malowanie</a>
+    <a class="nav-tab" data-page="podlogi">Podłogi</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <button id="langToggle">EN | PL</button>
+</header>
+
+<!-- HOME -->
+<div id="page-home" class="page-content active">
+  <section class="hero">
+    <h1>PRO DESIGN</h1>
+    <p>
+      <span class="lang-pl">Kompleksowe wykończenia wnętrz i remonty mieszkań oraz domów w Rzeszowie</span>
+      <span class="lang-en">Complete interior finishing and renovations in Rzeszów</span>
+    </p>
+    <a href="#wycena" class="cta-big">
+      <span class="lang-pl">Darmowa wycena</span>
+      <span class="lang-en">Free quote</span>
+    </a>
+  </section>
+
+  <section class="section">
+    <h2>Dlaczego PRO DESIGN</h2>
+    <div class="grid">
+      <div class="card">Doświadczenie i precyzja</div>
+      <div class="card">Terminowa realizacja</div>
+      <div class="card">Rzetelna wycena</div>
+      <div class="card">Ubezpieczenie OC</div>
+    </div>
+  </section>
+</div>
+
+<!-- ŁAZIENKI -->
+<div id="page-lazienki" class="page-content">
+  <section class="hero small">
+    <h1>Remont łazienek pod klucz</h1>
+  </section>
+</div>
+
+<!-- KAFELKI -->
+<div id="page-kafelkowanie" class="page-content">
+  <section class="hero small">
+    <h1>Profesjonalne kafelkowanie</h1>
+  </section>
+</div>
+
+<!-- MALOWANIE -->
+<div id="page-malowanie" class="page-content">
+  <section class="hero small">
+    <h1>Malowanie ścian i sufitów</h1>
+  </section>
+</div>
+
+<!-- PODŁOGI -->
+<div id="page-podlogi" class="page-content">
+  <section class="hero small">
+    <h1>Podłogi i wykończenia</h1>
+  </section>
+</div>
+
+<!-- WYCENA -->
+<section id="wycena" class="section grey">
+  <h2>Wycena</h2>
+  <form id="contactForm"
+        action="https://formspree.io/f/xreegzpp"
+        method="POST"
+        style="max-width:700px;margin:auto;display:grid;gap:15px">
+
+    <input name="imie" placeholder="Imię i nazwisko" required>
+    <input name="telefon" placeholder="Telefon" required>
+    <input name="email" type="email" placeholder="Email" required>
+
+    <textarea name="wiadomosc" placeholder="Informacje dodatkowe"></textarea>
+
+    <label>
+      <input type="checkbox" required> Akceptuję politykę prywatności
+    </label>
+
+    <button type="submit">Wyślij</button>
+    <div id="formMessage"></div>
+  </form>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="section">
+  <h2>Kontakt</h2>
+  <p>📞 +48 577 813 007</p>
+  <p>✉️ kontakt.prodesigne@gmail.com</p>
+  <p>📍 Rzeszów i okolice</p>
+</section>
+
+<footer>
+  © PRO DESIGN – Rzeszów
+</footer>
+
+</div>
+<script>
+/* =======================
+   LANGUAGE TOGGLE
+======================= */
+let currentLang = 'pl';
+const langToggle = document.getElementById('langToggle');
+
+langToggle.addEventListener('click', () => {
+  if (currentLang === 'pl') {
+    document.body.classList.add('lang-english');
+    currentLang = 'en';
+  } else {
+    document.body.classList.remove('lang-english');
+    currentLang = 'pl';
+  }
+});
+
+/* =======================
+   NAVIGATION
+======================= */
+const navTabs = document.querySelectorAll('.nav-tab');
+const pages = document.querySelectorAll('.page-content');
+
+navTabs.forEach(tab => {
+  tab.addEventListener('click', e => {
+    e.preventDefault();
+    const page = tab.dataset.page;
+
+    navTabs.forEach(t => t.classList.remove('active'));
+    pages.forEach(p => p.classList.remove('active'));
+
+    tab.classList.add('active');
+    const target = document.getElementById('page-' + page);
+    if (target) target.classList.add('active');
+
+    document.querySelector('.app-wrapper').scrollTop = 0;
+  });
+});
+
+/* =======================
+   LOGO → HOME
+======================= */
+document.getElementById('logoContainer').addEventListener('click', () => {
+  navTabs.forEach(t => t.classList.remove('active'));
+  pages.forEach(p => p.classList.remove('active'));
+
+  document.querySelector('.nav-tab[data-page="home"]').classList.add('active');
+  document.getElementById('page-home').classList.add('active');
+
+  document.querySelector('.app-wrapper').scrollTop = 0;
+});
+
+/* =======================
+   FORM (FORMSPREE)
+======================= */
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMessage');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  msg.textContent = currentLang === 'pl' ? 'Wysyłanie...' : 'Sending...';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!res.ok) throw new Error();
+
+    msg.textContent = currentLang === 'pl'
+      ? 'Formularz wysłany. Skontaktuję się z Tobą.'
+      : 'Form sent. I will contact you.';
+
+    form.reset();
+  } catch {
+    msg.textContent = currentLang === 'pl'
+      ? 'Błąd wysyłania. Zadzwoń lub napisz.'
+      : 'Sending failed. Please call or email.';
+  }
+});
+</script>
+
+</body>
+</html>
